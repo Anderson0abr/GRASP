@@ -25,9 +25,12 @@ def grasp(dataset):
 	return solucaoTemp
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
 	solucao = []
-	entrada = [[1,1,0,0,0,0,0],[1,1,0,0,1,0,0],[0,0,1,1,0,0,0],[0,0,1,1,1,1,1],[0,1,0,1,1,0,0],[0,0,0,1,0,1,1],[0,0,0,1,0,1,1]]
+	entrada = []
+	with open("entrada.txt") as file:
+		for line in file:
+			entrada.append([int(x) for x in line.split(",")])
 	numVertices = len(entrada)
 	grauVertices = [0 for x in range(numVertices)]
 	for i in range(numVertices):
