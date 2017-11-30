@@ -20,7 +20,7 @@ def grasp(dataset):
 		candidatos = [x for x in range(numVertices)]
 		for i in solucaoTemp:
 			for j in range(numVertices):
-				if(dataset[i][j] == 1 and j in candidatos):
+				if(i==j or (dataset[i][j] == 1 and j in candidatos)):
 					candidatos.remove(j)
 	return solucaoTemp
 
